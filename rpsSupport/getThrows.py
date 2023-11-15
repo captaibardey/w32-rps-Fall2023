@@ -1,12 +1,15 @@
+import rules
 import random 
 
 def getThrowPlayer() -> str:
-    print("Please type your throw: 'rock', 'paper', or 'scissors'")
+    print(f"Please type your throw: {', '.join(rules.rules_dict.keys())}")
     input_str = input().lower() 
-    while input_str not in set(['rock', 'paper', 'scissors']): # TODO get this from the dict keys once that's decided
-        print("Invalid input: please try again with input 'rock', 'paper', 'scissors'")
+    while input_str not in rules.rules_dict.keys():
+        print(f"Invalid input: please try again with input {', '.join(rules.rules_dict.keys())}")
         input_str = input().lower() 
     return input_str
 
 def getThrowComputer() -> str:
-    return random.choice(['rock', 'paper', 'scissors'])
+    return random.choice(rules.rules_dict.keys())
+
+getThrowPlayer()
