@@ -15,3 +15,4 @@ rules_dict_RPS = {
     'paper': ['rock'],
     'scissors': ['paper']
     }
+
