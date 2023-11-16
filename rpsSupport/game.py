@@ -2,14 +2,18 @@ import getThrows
 import rules
 
 def playeroutcome(gamedict, playerthrow: str, computerthrow: str) -> str:
+    print ("computer choses", computerthrow)
     if playerthrow == computerthrow:
-        return "tie"
-    if computerthrow in gamedict[playerthrow]:
-        return "win"
+        print("tie")
     else:
-        return "lose"
+        if computerthrow in gamedict[playerthrow]:
+            print("you win")
+        else:
+            print("you lose")
 
 def playGame():
     playerthrow = getThrows.getThrowPlayer()
     computerthrow = getThrows.getThrowComputer()
     return playeroutcome(rules.rules_dict, playerthrow, computerthrow)
+
+playGame()
