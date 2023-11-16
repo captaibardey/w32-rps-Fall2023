@@ -1,5 +1,5 @@
-import rules
-import random 
+from . import rules
+import random
 
 def getThrowPlayer() -> str:
     print(f"Please type your throw: one of {', '.join(rules.rules_dict.keys())}")
